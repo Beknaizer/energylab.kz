@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Market</title>
+    <link rel="stylesheet" href="../static/css/power-market.css">
+    <link rel="stylesheet" href="../static/css/hybrid-modeling.css">
+    <link rel="icon" href="../static/img/icon.ico">
+
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+
+    <script> 
+        $(function(){
+        $("#navbar").load("pm-navbar.html"); 
+        $("#footer").load("footer.html"); 
+        });
+    </script> 
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+    <div class="banner">
+        <div class="slogan">
+            <h3>Modeling and digitalization of electricity system of Kazakhstan to form new market designs, tariff policy enable high share of renewables </h3>
+        </div>
+    </div>
+
+<!-- 
+<div class="info-section-up">
+    <div>
+        <h1>Tasks</h1>
+            <ul>
+                <li>Collection and processing of telemetry data, ranges of operating modes, weather, digitization of processes, diagrams and drawings.</li>
+                <li>Modeling of CHP and development of a machine learning algorithm for planning (short-term and long-term) maintenance and repairs of equipment.</li>
+                <li>Development of recommendations for improving energy efficiency, for managing the reliability of CHP plants based on the Decision Tree.</li>
+            </ul>
+    </div>s
+
+    <div>
+        <h1>Aim</h1>
+        <ul>
+            The purpose is to study the potential for improving the energy efficiency of CHPPs, reducing greenhouse gas emissions and applying modeling and machine learning methods for optimal planning of the composition of the generating equipment of the CHPP in Pavlodar, Kazakhstan.
+        </ul>
+    </div>
+
+</div> -->
+
+
+
+<div class="tag">
+      <h1>About</h1>
+    </div>
+    <div class="short_about">
+      <div>
+          <b>Purpose:</b>The purpose of the project: to study and analyze ways to form an effective tariff policy and new market mechanisms in the electric power industry of Kazakhstan with an increase in the share of renewable energy sources (RES) and digitalization of the sector by comparing different development scenarios; development of software or a web platform for the efficient operation of an electricity sales operator.
+        
+        </div>
+    </div>
+  
+  <center>
+    <img src="../static/img/pm-structure.png" class="pm-structure">   
+  </center>
+
+<div class="about_link">
+  <button class="button-31" role="button" onclick="openWindow('pm-about.html')">more</button>
+</div>
+
+
+    <div id="footer"></div>
+
+
+    <script>
+
+        function openWindow(link){
+            window.open(link);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+        const prevButton = document.querySelector('.carousel-prev');
+        const nextButton = document.querySelector('.carousel-next');
+
+        let slideIndex = 0;
+        const slidesPerView = 3; // Number of members per slide
+
+        function updateCarousel() {
+            const slideWidth = 100 / slidesPerView;
+            track.style.transform = `translateX(-${slideIndex * slideWidth}%)`;
+
+            prevButton.disabled = slideIndex === 0;
+            nextButton.disabled = slideIndex >= slides.length - slidesPerView;
+        }
+
+        function slidePrev() {
+            slideIndex = Math.max(0, slideIndex - 2);
+            updateCarousel();
+        }
+
+        function slideNext() {
+            slideIndex = Math.min(slideIndex +2, slides.length - slidesPerView);
+            updateCarousel();
+        }
+
+        prevButton.addEventListener('click', slidePrev);
+        nextButton.addEventListener('click', slideNext);
+
+        updateCarousel();
+        });
+    </script>
+    
+</body>
+</html>
